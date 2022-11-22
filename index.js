@@ -8,11 +8,10 @@ const errorHandler = require("./middleware/errorHandler");
 
 app.use(cors());
 app.use(express.json({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
 
 // Using routes
 app.use("/weather", weatherData);
-// settings port
+// Port
 const PORT = process.env.PORT;
 // Adding errorHandler
 app.use(errorHandler);

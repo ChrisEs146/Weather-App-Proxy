@@ -5,9 +5,9 @@ const limiter = require("express-rate-limit");
 const weatherLimiter = limiter({
   windowMs: 60 * 1000,
   max: 6,
-  message: { message: "Too many request, please try againg in 1 minute" },
+  message: { message: "Too many request, please try again in 1 minute" },
   handler: (req, res, next, options) => {
-    res.status(options.statusCode).send(options.message);
+    return res.status(options.statusCode).send(options.message);
   },
   standardHeaders: true,
   legacyHeaders: false,
